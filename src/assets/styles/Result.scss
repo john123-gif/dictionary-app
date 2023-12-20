@@ -1,0 +1,180 @@
+
+$phonetics-synonyms-color: #A445ED;
+$meaning-synonyms-example-color: #838383;
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.response-div{
+  display: flex;
+    width: 100%;
+    min-height: 40rem;
+    margin-top: 1rem;
+    .response{
+        hr{
+            margin-top: 35px;
+            margin-bottom: 0;
+            border-top: 0.1px solid rgba(117, 117, 117, 0.1);
+        }
+    }
+
+    .word-audio-div{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+       flex-direction: row;
+       width: 100%;
+       min-height: 5rem;
+
+        .word-phonetics-span{
+            line-height: 12px;
+            margin: 0;
+
+            h2{
+                font-size: 64px; 
+            }
+            p{
+                font-size: 24px;
+                font-weight: 400;
+            }
+            .phonetics{
+                color: $phonetics-synonyms-color;
+            }
+        }
+    }
+    .noun-verb-divs-container{
+        div{
+            margin-top: 0;
+        }
+        ul{
+            line-height: 25px;
+        }
+        h4{
+            font-size: 24px;
+           
+            font-weight: 700;
+        }
+        h5{
+            font-size: 16px;
+            font-weight: 400;
+            color: $meaning-synonyms-example-color;
+        }
+        .noun-verb-div{
+            .noun-verb{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                font-weight: 400;
+            }
+            .noun-verb::after {
+                content: '';
+                padding-left: 10px;
+                flex: 0.97 1 auto;
+                border-bottom: 2px solid rgba(117, 117, 117, 0.1);
+            }
+            ul{
+                list-style: none;
+            }
+            ul li::before {
+                content: "\2022";
+                color: $phonetics-synonyms-color;
+                font-weight: bold;
+                display: inline-block; 
+                width: 1em;
+                margin-left: -1em;
+                font-size: 18px;
+                
+              }
+            .synonyms-paragraph{
+                display: flex;
+                margin-top: 50px;
+                gap: 20px;
+            }
+            .synonyms{
+                color: $phonetics-synonyms-color;
+                font-weight: 500;
+                &:hover{
+                    text-decoration: underline;
+                    text-decoration-thickness: 1.3px;
+                    text-underline-offset: 2px;
+                    text-decoration-color: #A445ED;
+                    cursor: pointer;
+                }
+            }
+            a{
+                text-decoration: none;
+                &:hover{
+                    text-decoration: underline;
+                    text-decoration-color: #A445ED;
+                    text-decoration-thickness: 1px;
+                }
+            }
+            .synonyms-word{
+                color: $meaning-synonyms-example-color;
+            }
+            .example{
+                color: $meaning-synonyms-example-color;
+            }
+        }
+    }
+    .link-span{
+        justify-content: flex-start;
+        gap: 20px;
+        border-top: 2px solid rgba(117, 117, 117, 0.1);
+        margin-top: 40px;
+        padding-top: 0;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        #source-word{
+            border-bottom: 2px solid rgba(117, 117, 117, 0.5);
+            line-height: 12px;
+            font-size: 13px;
+            font-weight: 400;
+            color: $meaning-synonyms-example-color;
+        }
+        .url{
+            font-weight: 300;
+            display: flex;
+            gap: 12px;
+            #http{
+                font-size: 14px;
+                color: inherit;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+@media screen and (max-width:380px) {
+    .response-div{
+        min-width: 285px; 
+        margin-left: 10px;
+        margin-right: 10px !important;
+    }
+    li{
+        font-size: 15px;
+    }
+
+    .response-div .word-audio-div{
+    width: 90%;
+    margin-left: 10px;
+    }
+
+    .noun-verb-div{
+       margin-right: 10px;
+       width: auto;
+       margin-left: 10px;
+    }
+
+
+    h4{
+        font-size: 18px !important;
+    }
+}
